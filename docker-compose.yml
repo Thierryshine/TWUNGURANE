@@ -1,0 +1,138 @@
+# =============================================================================
+# TWUNGURANE - Docker Compose Configuration
+# Application de Gestion des Groupes d'Épargne Communautaire - Burundi
+# =============================================================================
+
+version: '3.8'
+
+services:
+  # ---------------------------------------------------------------------------
+  # MySQL Database Service
+  # ---------------------------------------------------------------------------
+  mysql:
+    image: mysql:8.0
+    container_name: twungurane_mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:-twungurane_root_2024}
+      MYSQL_DATABASE: ${DB_DATABASE:-twungurane}
+      MYSQL_USER: ${DB_USERNAME:-twungurane_user}
+      MYSQL_PASSWORD: ${DB_PASSWORD:-twungurane_pass_2024}
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./docker/mysql/init:/docker-entrypoint-initdb.d
+    networks:
+      - twungurane_network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p${DB_ROOT_PASSWORD:-twungurane_root_2024}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ---------------------------------------------------------------------------
+  # PHP-FPM Service (Laravel Backend)
+  # ---------------------------------------------------------------------------
+  php:
+    build:
+      context: ./docker/php
+      dockerfile: Dockerfile
+    container_name: twungurane_php
+    restart: unless-stopped
+    working_dir: /var/www/html
+    environment:
+      - APP_ENV=${APP_ENV:-local}
+      - DB_HOST=mysql
+      - DB_PORT=3306
+      - DB_DATABASE=${DB_DATABASE:-twungurane}
+      - DB_USERNAME=${DB_USERNAME:-twungurane_user}
+      - DB_PASSWORD=${DB_PASSWORD:-twungurane_pass_2024}
+      - PYTHON_SERVICE_URL=http://python:8000
+      - PYTHON_SERVICE_TOKEN=${INTERNAL_API_TOKEN:-twungurane_internal_token_2024}
+    volumes:
+      - ./backend:/var/www/html
+      - ./docker/php/local.ini:/usr/local/etc/php/conf.d/local.ini
+    networks:
+      - twungurane_network
+    depends_on:
+      mysql:
+        condition: service_healthy
+
+  # ---------------------------------------------------------------------------
+  # Nginx Web Server
+  # ---------------------------------------------------------------------------
+  nginx:
+    image: nginx:alpine
+    container_name: twungurane_nginx
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+      - "443:443"
+    volumes:
+      - ./backend:/var/www/html
+      - ./frontend:/var/www/frontend
+      - ./docker/nginx/conf.d:/etc/nginx/conf.d
+      - ./docker/nginx/ssl:/etc/nginx/ssl
+    networks:
+      - twungurane_network
+    depends_on:
+      - php
+      - python
+
+  # ---------------------------------------------------------------------------
+  # Python FastAPI Service (Analyses Financières)
+  # ---------------------------------------------------------------------------
+  python:
+    build:
+      context: ./python-service
+      dockerfile: Dockerfile
+    container_name: twungurane_python
+    restart: unless-stopped
+    environment:
+      - ENVIRONMENT=${APP_ENV:-development}
+      - DB_HOST=mysql
+      - DB_PORT=3306
+      - DB_DATABASE=${DB_DATABASE:-twungurane}
+      - DB_USERNAME=${DB_USERNAME:-twungurane_user}
+      - DB_PASSWORD=${DB_PASSWORD:-twungurane_pass_2024}
+      - INTERNAL_API_TOKEN=${INTERNAL_API_TOKEN:-twungurane_internal_token_2024}
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./python-service:/app
+    networks:
+      - twungurane_network
+    depends_on:
+      mysql:
+        condition: service_healthy
+
+  # ---------------------------------------------------------------------------
+  # Redis Cache (Optional - for session/cache)
+  # ---------------------------------------------------------------------------
+  redis:
+    image: redis:alpine
+    container_name: twungurane_redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - twungurane_network
+
+# =============================================================================
+# Networks
+# =============================================================================
+networks:
+  twungurane_network:
+    driver: bridge
+
+# =============================================================================
+# Volumes
+# =============================================================================
+volumes:
+  mysql_data:
+    driver: local
+  redis_data:
+    driver: local

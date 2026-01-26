@@ -1,0 +1,1356 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TWUNGURANE - Gestion des Groupes d'Épargne Communautaire au Burundi</title>
+    <meta name="description" content="Application fintech pour la gestion digitale des groupes d'épargne communautaire (tontines, VSLA) au Burundi. Transparence, confiance et simplicité.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- ==================== LANDING PAGE ==================== -->
+    <div id="landingPage" class="landing-page active">
+        
+        <!-- Landing Navigation -->
+        <nav class="landing-nav" id="landingNav">
+            <div class="landing-nav-container">
+                <a href="#" class="landing-logo">
+                    <i class="fas fa-piggy-bank"></i>
+                    <span>TWUNGURANE</span>
+                </a>
+                <ul class="landing-nav-menu" id="landingNavMenu">
+                    <li><a href="#features" class="landing-nav-link">Fonctionnalités</a></li>
+                    <li><a href="#how-it-works" class="landing-nav-link">Comment ça marche</a></li>
+                    <li><a href="#about" class="landing-nav-link">À propos</a></li>
+                    <li><a href="#contact" class="landing-nav-link">Contact</a></li>
+                    <li class="landing-nav-actions-mobile">
+                        <a href="#" class="btn btn-outline-light" id="btnShowLoginMobile">Se connecter</a>
+                        <a href="#" class="btn btn-gold" id="btnShowRegisterMobile">S'inscrire</a>
+                    </li>
+                </ul>
+                <div class="landing-nav-actions">
+                    <a href="#" class="btn btn-outline-light" id="btnShowLogin">Se connecter</a>
+                    <a href="#" class="btn btn-gold" id="btnShowRegister">S'inscrire</a>
+                </div>
+                <div class="landing-nav-toggle" id="landingNavToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero-section" id="hero">
+            <div class="hero-bg-pattern"></div>
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <i class="fas fa-star"></i>
+                        Première Fintech pour les VSLA au Burundi
+                    </div>
+                    <h1 class="hero-title">
+                        Transformation Financière <span class="highlight">Digitale</span> pour les Communautés Burundaises
+                    </h1>
+                    <p class="hero-subtitle">
+                        Digitalisez la gestion de vos groupes d'épargne communautaire (Tontines, VSLA) avec une solution moderne, transparente et accessible via Mobile Money.
+                    </p>
+                    <div class="hero-cta">
+                        <a href="#" class="btn btn-primary btn-lg" id="heroGetStarted">
+                            Commencer maintenant
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="#how-it-works" class="btn btn-outline-white btn-lg">
+                            <i class="fas fa-play-circle"></i>
+                            En savoir plus
+                        </a>
+                    </div>
+                    <div class="hero-badges">
+                        <div class="hero-badge-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Toutes les provinces</span>
+                        </div>
+                        <div class="hero-badge-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Mobile Money</span>
+                        </div>
+                        <div class="hero-badge-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>100% Sécurisé</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-phone-mockup">
+                        <div class="phone-screen">
+                            <div class="phone-header">
+                                <i class="fas fa-piggy-bank"></i>
+                                <span>TWUNGURANE</span>
+                            </div>
+                            <div class="phone-content">
+                                <div class="phone-stat">
+                                    <span class="phone-stat-label">Solde Total</span>
+                                    <span class="phone-stat-value">2,450,000 FBU</span>
+                                </div>
+                                <div class="phone-members">
+                                    <div class="phone-member-avatar">JN</div>
+                                    <div class="phone-member-avatar">MK</div>
+                                    <div class="phone-member-avatar">PT</div>
+                                    <div class="phone-member-avatar">+12</div>
+                                </div>
+                                <div class="phone-actions">
+                                    <div class="phone-action">
+                                        <i class="fas fa-plus"></i>
+                                        Contribution
+                                    </div>
+                                    <div class="phone-action">
+                                        <i class="fas fa-hand-holding-usd"></i>
+                                        Prêt
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero-floating-card card-1">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Sécurisé</span>
+                    </div>
+                    <div class="hero-floating-card card-2">
+                        <i class="fas fa-chart-line"></i>
+                        <span>+35% Épargne</span>
+                    </div>
+                    <div class="hero-floating-card card-3">
+                        <i class="fas fa-users"></i>
+                        <span>500+ Groupes</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-icon-box">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>5</h3>
+                        <p>Provinces Couvertes</p>
+                        <span>Couverture nationale</span>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon-box">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>100%</h3>
+                        <p>Accès Mobile</p>
+                        <span>Fonctionne sur tous les téléphones</span>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon-box">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>2</h3>
+                        <p>Opérateurs Mobile Money</p>
+                        <span>Lumicash, EcoCash</span>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon-box">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>24/7</h3>
+                        <p>Support Disponible</p>
+                        <span>Toujours là pour vous aider</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features-section" id="features">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-badge">Fonctionnalités</span>
+                    <h2 class="section-title">
+                        Tout ce dont votre VSLA a besoin. <span class="highlight">Simple. Sécurisé. Accessible.</span>
+                    </h2>
+                    <p class="section-subtitle">
+                        Une plateforme digitale complète conçue spécifiquement pour les groupes d'épargne communautaire au Burundi. Gérez efficacement tout en construisant des historiques de crédit vérifiables.
+                    </p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-users-cog"></i>
+                        </div>
+                        <h3>Gestion Complète des Membres</h3>
+                        <p>Gérez facilement vos membres avec des profils digitaux, un suivi automatique et un historique transparent des contributions.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <h3>Suivi Financier Intelligent</h3>
+                        <p>Gestion en temps réel des épargnes et prêts pour une précision maximale. Fini les calculs manuels et les erreurs de papier.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Intégration Mobile Money</h3>
+                        <p>Recevez les contributions via Lumicash, EcoCash ou M-Pesa. Transactions instantanées et traçables.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Sécurité Bancaire</h3>
+                        <p>Vos données sont protégées avec une sécurité de niveau entreprise. Transactions cryptées et authentification sécurisée.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-file-invoice"></i>
+                        </div>
+                        <h3>Rapports Détaillés</h3>
+                        <p>Prenez des décisions éclairées avec des analyses complètes. Suivez les performances et générez des rapports PDF/CSV.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3>Gain de Temps</h3>
+                        <p>Processus automatisés qui éliminent les heures de calculs manuels. Concentrez-vous sur ce qui compte: vos membres.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Coverage Section -->
+        <section class="coverage-section" id="coverage">
+            <div class="section-container">
+                <div class="coverage-content">
+                    <div class="coverage-text">
+                        <span class="section-badge">Couverture Nationale</span>
+                        <h2 class="section-title">
+                            Réseau de Paiement <span class="highlight">Mobile Money</span>
+                        </h2>
+                        <p class="section-subtitle">
+                            Intégré avec les principaux opérateurs Mobile Money du Burundi pour des transactions instantanées et sécurisées partout.
+                        </p>
+                    </div>
+                    <div class="payment-providers">
+                        <div class="provider-card">
+                            <div class="provider-logo lumicash">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <h4>Lumicash</h4>
+                            <p>Lumitel</p>
+                        </div>
+                        <div class="provider-card">
+                            <div class="provider-logo ecocash">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <h4>EcoCash</h4>
+                            <p>Econet Leo</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="coverage-features">
+                    <div class="coverage-feature">
+                        <i class="fas fa-bolt"></i>
+                        <div>
+                            <h4>Transactions Instantanées</h4>
+                            <p>Traitez les dépôts, retraits et décaissements de prêts en temps réel via Mobile Money</p>
+                        </div>
+                    </div>
+                    <div class="coverage-feature">
+                        <i class="fas fa-globe-africa"></i>
+                        <div>
+                            <h4>Couverture Complète</h4>
+                            <p>Que vos membres utilisent Lumicash, EcoCash ou M-Pesa - tout le monde peut participer</p>
+                        </div>
+                    </div>
+                    <div class="coverage-feature">
+                        <i class="fas fa-heart"></i>
+                        <div>
+                            <h4>Familier & Fiable</h4>
+                            <p>Les membres utilisent les mêmes plateformes qu'ils connaissent déjà pour leurs transactions quotidiennes</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section class="how-it-works-section" id="how-it-works">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-badge">Processus Simple</span>
+                    <h2 class="section-title">
+                        Commencez en <span class="highlight">Quatre Étapes Faciles</span>
+                    </h2>
+                    <p class="section-subtitle">
+                        Transformez votre VSLA du traditionnel au digital en moins d'une heure. Aucune expertise technique requise.
+                    </p>
+                </div>
+                <div class="steps-container">
+                    <div class="step-card">
+                        <div class="step-number">01</div>
+                        <div class="step-icon">
+                            <i class="fas fa-user-plus"></i>
+                        </div>
+                        <h3>Créez votre compte</h3>
+                        <p>Inscrivez votre groupe en quelques minutes. Ajoutez les informations de base sur votre VSLA, localisation et équipe de direction.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">02</div>
+                        <div class="step-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Invitez les Membres</h3>
+                        <p>Ajoutez les administrateurs, trésoriers et membres à votre groupe. Attribuez les rôles et définissez les permissions.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">03</div>
+                        <div class="step-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3>Commencez à Gérer</h3>
+                        <p>Organisez des réunions digitales, traitez les paiements, suivez les épargnes et approuvez les prêts depuis une seule plateforme.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">04</div>
+                        <div class="step-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Suivez la Progression</h3>
+                        <p>Visualisez les analyses en temps réel, générez des rapports et observez la croissance de votre groupe avec transparence totale.</p>
+                    </div>
+                </div>
+                <div class="dashboard-preview">
+                    <div class="dashboard-preview-header">
+                        <h3>Votre VSLA, Géré Visuellement.</h3>
+                        <p>Le tableau de bord vous donne une vue d'ensemble de la santé financière, des progrès et des activités de votre groupe en temps réel.</p>
+                    </div>
+                    <div class="dashboard-mockup">
+                        <div class="mockup-header">
+                            <div class="mockup-dots">
+                                <span></span><span></span><span></span>
+                            </div>
+                            <span>Tableau de bord - TWUNGURANE</span>
+                        </div>
+                        <div class="mockup-content">
+                            <div class="mockup-stats">
+                                <div class="mockup-stat-card">
+                                    <i class="fas fa-wallet"></i>
+                                    <div>
+                                        <span class="label">Solde Total</span>
+                                        <span class="value">4,250,000 FBU</span>
+                                    </div>
+                                </div>
+                                <div class="mockup-stat-card">
+                                    <i class="fas fa-users"></i>
+                                    <div>
+                                        <span class="label">Membres Actifs</span>
+                                        <span class="value">18</span>
+                                    </div>
+                                </div>
+                                <div class="mockup-stat-card">
+                                    <i class="fas fa-chart-line"></i>
+                                    <div>
+                                        <span class="label">Ce Mois</span>
+                                        <span class="value">+850,000 FBU</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mockup-chart">
+                                <div class="chart-bars">
+                                    <div class="bar" style="height: 40%"></div>
+                                    <div class="bar" style="height: 60%"></div>
+                                    <div class="bar" style="height: 45%"></div>
+                                    <div class="bar" style="height: 80%"></div>
+                                    <div class="bar" style="height: 70%"></div>
+                                    <div class="bar" style="height: 90%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-primary btn-lg dashboard-cta" id="dashboardCta">
+                        Voir le Tableau de Bord
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="benefits-row">
+                    <div class="benefit-item">
+                        <i class="fas fa-rocket"></i>
+                        <h4>Installation Rapide</h4>
+                        <p>Opérationnel en moins de 30 minutes</p>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h4>Formation Gratuite</h4>
+                        <p>Accompagnement complet inclus</p>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-headset"></i>
+                        <h4>Support 24/7</h4>
+                        <p>Notre équipe est toujours là pour vous</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about-section" id="about">
+            <div class="section-container">
+                <div class="about-header">
+                    <span class="section-badge">À Propos de TWUNGURANE</span>
+                    <h2 class="section-title">
+                        Faire le Pont entre <span class="highlight">Tradition et Technologie</span>
+                    </h2>
+                    <p class="section-subtitle">
+                        Première application fintech burundaise dédiée à transformer la façon dont les groupes d'épargne communautaire gèrent leurs finances grâce à des solutions digitales accessibles.
+                    </p>
+                </div>
+                <div class="about-content">
+                    <div class="about-mission">
+                        <h3>Notre Mission</h3>
+                        <p>TWUNGURANE offre un système entièrement intégré qui améliore l'efficacité de la gestion financière, la transparence et la responsabilité pour les groupes d'épargne communautaire à travers tout le Burundi.</p>
+                        <p>Notre plateforme permet aux utilisateurs de gérer les profils des membres, suivre les épargnes et prêts, et générer des rapports financiers détaillés. En créant un pont entre les groupes d'épargne informels et les institutions financières formelles, nous renforçons l'infrastructure financière des communautés burundaises.</p>
+                    </div>
+                    <div class="about-cards">
+                        <div class="about-card">
+                            <div class="about-card-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <h4>Notre Innovation</h4>
+                            <p>Intégration Mobile Money (Lumicash, EcoCash, M-Pesa) pour une inclusion financière de tous, quel que soit le type de téléphone.</p>
+                        </div>
+                        <div class="about-card">
+                            <div class="about-card-icon">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                            <h4>Notre Vision</h4>
+                            <p>Un Burundi où chacun, quelle que soit sa localisation ou son statut économique, a accès aux outils financiers digitaux pour épargner et investir.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="values-section">
+                    <h3>Nos Valeurs Fondamentales</h3>
+                    <p class="values-subtitle">Les principes qui guident tout ce que nous faisons</p>
+                    <div class="values-grid">
+                        <div class="value-card">
+                            <div class="value-icon">
+                                <i class="fas fa-hand-holding-heart"></i>
+                            </div>
+                            <h4>Inclusion Financière</h4>
+                            <p>Nous croyons que chacun mérite un accès à des services financiers sécurisés et transparents.</p>
+                        </div>
+                        <div class="value-card">
+                            <div class="value-icon">
+                                <i class="fas fa-people-arrows"></i>
+                            </div>
+                            <h4>Communauté d'Abord</h4>
+                            <p>Les VSLA sont au cœur des communautés. Nous construisons des outils qui renforcent ces liens.</p>
+                        </div>
+                        <div class="value-card">
+                            <div class="value-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <h4>Innovation</h4>
+                            <p>Combinaison de technologie de pointe et compréhension profonde des communautés burundaises.</p>
+                        </div>
+                        <div class="value-card">
+                            <div class="value-icon">
+                                <i class="fas fa-seedling"></i>
+                            </div>
+                            <h4>Croissance Durable</h4>
+                            <p>Nous mesurons notre succès par l'autonomisation économique que nous aidons nos membres à atteindre.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="cta-banner">
+                    <h3>Rejoignez Notre Mission</h3>
+                    <p>Nous recherchons des partenaires qui partagent notre vision d'inclusion financière et d'autonomisation économique pour les communautés burundaises</p>
+                    <a href="#contact" class="btn btn-gold btn-lg">Devenir Partenaire</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Partner/Contact Section -->
+        <section class="contact-section-landing" id="contact">
+            <div class="section-container">
+                <div class="contact-content">
+                    <div class="contact-info-landing">
+                        <span class="section-badge">Contactez-nous</span>
+                        <h2 class="section-title">
+                            Développez l'Impact de Votre <span class="highlight">VSLA au Burundi</span>
+                        </h2>
+                        <p class="section-subtitle">
+                            Nous collaborons avec les ONG, institutions de microfinance et organisations de développement pour apporter des services financiers digitaux aux VSLA à travers le Burundi.
+                        </p>
+                        <div class="partner-types">
+                            <div class="partner-type">
+                                <i class="fas fa-building"></i>
+                                <div>
+                                    <h4>ONG & Organisations de Développement</h4>
+                                    <p>Partenariez avec nous pour digitaliser les programmes VSLA et suivre l'impact à grande échelle</p>
+                                </div>
+                            </div>
+                            <div class="partner-type">
+                                <i class="fas fa-landmark"></i>
+                                <div>
+                                    <h4>Institutions de Microfinance</h4>
+                                    <p>Accédez aux historiques de crédit vérifiés et étendez les services financiers aux VSLA</p>
+                                </div>
+                            </div>
+                            <div class="partner-type">
+                                <i class="fas fa-hand-holding-usd"></i>
+                                <div>
+                                    <h4>Entreprises & Bailleurs</h4>
+                                    <p>Soutenez les initiatives d'inclusion financière avec des résultats mesurables</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact-methods">
+                            <a href="tel:+25767227092" class="contact-method">
+                                <i class="fas fa-phone"></i>
+                                <div>
+                                    <span>Appelez-nous</span>
+                                    <strong>+257 67227092</strong>
+                                </div>
+                            </a>
+                            <a href="mailto:contact@twungurane.bi" class="contact-method">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <span>Écrivez-nous</span>
+                                    <strong>contact@twungurane.bi</strong>
+                                </div>
+                            </a>
+                            <div class="contact-method">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <span>Visitez-nous</span>
+                                    <strong>Bujumbura, Burundi</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-form-landing">
+                        <h3>Demande de Partenariat</h3>
+                        <p>Parlez-nous de votre organisation et comment nous pouvons collaborer</p>
+                        <form id="partnerForm" class="partner-form">
+                            <div class="form-group">
+                                <label for="partnerOrg">Nom de l'Organisation *</label>
+                                <input type="text" id="partnerOrg" placeholder="Votre organisation" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="partnerName">Personne de Contact *</label>
+                                <input type="text" id="partnerName" placeholder="Votre nom complet" required>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="partnerEmail">Email *</label>
+                                    <input type="email" id="partnerEmail" placeholder="votre@email.com" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="partnerPhone">Téléphone *</label>
+                                    <input type="tel" id="partnerPhone" placeholder="+257 XX XX XX XX" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="partnerType">Type d'Organisation *</label>
+                                <select id="partnerType" required>
+                                    <option value="">Sélectionnez le type</option>
+                                    <option value="ngo">ONG / Organisation de Développement</option>
+                                    <option value="mfi">Institution de Microfinance</option>
+                                    <option value="corporate">Entreprise / Fondation</option>
+                                    <option value="government">Agence Gouvernementale</option>
+                                    <option value="vsla">Réseau VSLA / Fédération</option>
+                                    <option value="other">Autre</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="partnerMessage">Intérêt de Partenariat *</label>
+                                <textarea id="partnerMessage" rows="4" placeholder="Parlez-nous de vos programmes VSLA et comment vous aimeriez collaborer avec TWUNGURANE..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-lg btn-full">
+                                Soumettre la Demande
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                            <p class="form-note">Nous répondons sous 24 heures pour discuter des opportunités de partenariat</p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Landing Footer -->
+        <footer class="landing-footer">
+            <div class="footer-container">
+                <div class="footer-content">
+                    <div class="footer-section footer-brand-section">
+                        <div class="footer-brand">
+                            <i class="fas fa-piggy-bank"></i>
+                            <h3>TWUNGURANE</h3>
+                        </div>
+                        <p>Première application fintech burundaise dédiée à l'autonomisation des groupes d'épargne communautaire grâce à des solutions financières digitales complètes. Construisons ensemble un avenir financier plus inclusif.</p>
+                        <div class="footer-social">
+                            <a href="#" class="social-link" aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="WhatsApp">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="footer-section">
+                        <h4>Produit</h4>
+                        <ul class="footer-links">
+                            <li><a href="#features">Fonctionnalités</a></li>
+                            <li><a href="#how-it-works">Comment ça marche</a></li>
+                            <li><a href="#">Tarifs</a></li>
+                            <li><a href="#">Sécurité</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-section">
+                        <h4>Entreprise</h4>
+                        <ul class="footer-links">
+                            <li><a href="#about">À propos</a></li>
+                            <li><a href="#">Notre Mission</a></li>
+                            <li><a href="#">Carrières</a></li>
+                            <li><a href="#">Blog</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-section">
+                        <h4>Ressources</h4>
+                        <ul class="footer-links">
+                            <li><a href="#">Centre d'aide</a></li>
+                            <li><a href="#">Documentation</a></li>
+                            <li><a href="#">Formation</a></li>
+                            <li><a href="#">FAQ</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-section">
+                        <h4>Contact</h4>
+                        <ul class="footer-contact">
+                            <li>
+                                <i class="fas fa-envelope"></i>
+                                <span>contact@twungurane.bi</span>
+                            </li>
+                            <li>
+                                <i class="fab fa-whatsapp"></i>
+                                <span>+257 79 000 000</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Bujumbura, Burundi</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <p>&copy; 2025 TWUNGURANE. Tous droits réservés.</p>
+                    <div class="footer-legal">
+                        <a href="#">Politique de confidentialité</a>
+                        <a href="#">Conditions d'utilisation</a>
+                        <a href="#">Mentions légales</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- ==================== APP NAVIGATION ==================== -->
+    <nav class="navbar" id="navbar" style="display: none;">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-piggy-bank"></i>
+                <span>TWUNGURANE</span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#dashboard" class="nav-link" data-page="dashboard">Tableau de bord</a></li>
+                <li><a href="#cercles" class="nav-link" data-page="cercles">Mes Cercles</a></li>
+                <li><a href="#transactions" class="nav-link" data-page="transactions">Transactions</a></li>
+                <li><a href="#prets" class="nav-link" data-page="prets">Prêts</a></li>
+                <li><a href="#rapports" class="nav-link" data-page="rapports">Rapports</a></li>
+                <li><a href="#contact" class="nav-link" data-page="contact">Contact</a></li>
+                <li class="nav-user" id="navUser">
+                    <span id="userName"></span>
+                    <button class="btn-logout" id="btnLogout">Déconnexion</button>
+                </li>
+            </ul>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==================== AUTH PAGE ==================== -->
+    <div id="authPage" class="page">
+        <div class="auth-container">
+            <div class="auth-card">
+                <div class="auth-header">
+                    <i class="fas fa-piggy-bank"></i>
+                    <h1>TWUNGURANE</h1>
+                    <p>Gestion des Groupes d'Épargne Communautaire</p>
+                </div>
+                
+                <!-- Formulaire de connexion -->
+                <div id="loginForm" class="auth-form active">
+                    <h2>Connexion</h2>
+                    <form id="loginFormElement">
+                        <div class="form-group">
+                            <label for="loginIdentifier">Téléphone ou Email</label>
+                            <input type="text" id="loginIdentifier" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="loginPassword">Mot de passe</label>
+                            <input type="password" id="loginPassword" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Se connecter</button>
+                    </form>
+                    <p class="auth-switch">
+                        Pas encore de compte ? <a href="#" id="showRegister">S'inscrire</a>
+                    </p>
+                    <p class="auth-switch">
+                        <a href="#" id="backToLanding">Retour à l'accueil</a>
+                    </p>
+                </div>
+
+                <!-- Formulaire d'inscription -->
+                <div id="registerForm" class="auth-form">
+                    <h2>Inscription</h2>
+                    <form id="registerFormElement">
+                        <div class="form-group">
+                            <label for="regName">Nom complet</label>
+                            <input type="text" id="regName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="regPhone">Numéro de téléphone</label>
+                            <input type="tel" id="regPhone" placeholder="+257 XX XX XX XX" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="regEmail">Email</label>
+                            <input type="email" id="regEmail" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="regPassword">Mot de passe</label>
+                            <input type="password" id="regPassword" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="regRole">Rôle</label>
+                            <select id="regRole" required>
+                                <option value="member">Membre</option>
+                                <option value="treasurer">Trésorier</option>
+                                <option value="admin">Administrateur</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">S'inscrire</button>
+                    </form>
+                    <p class="auth-switch">
+                        Déjà un compte ? <a href="#" id="showLogin">Se connecter</a>
+                    </p>
+                    <p class="auth-switch">
+                        <a href="#" id="backToLandingReg">Retour à l'accueil</a>
+                    </p>
+                </div>
+
+                <!-- Formulaire OTP -->
+                <div id="otpForm" class="auth-form">
+                    <h2>Vérification OTP</h2>
+                    <p class="otp-info">Un code de vérification a été envoyé à <span id="otpPhone"></span></p>
+                    <form id="otpFormElement">
+                        <div class="form-group">
+                            <label for="otpCode">Code OTP</label>
+                            <input type="text" id="otpCode" maxlength="6" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Vérifier</button>
+                    </form>
+                    <p class="auth-switch">
+                        <a href="#" id="resendOTP">Renvoyer le code</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== DASHBOARD PAGE ==================== -->
+    <div id="dashboardPage" class="page">
+        <div class="container">
+            <div class="page-header">
+                <h1>Tableau de bord</h1>
+                <p id="dashboardGreeting">Bienvenue</p>
+            </div>
+
+            <!-- Statistiques principales -->
+            <div class="stats-grid" id="statsGrid">
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-wallet"></i></div>
+                    <div class="stat-content">
+                        <h3>Solde Total</h3>
+                        <p class="stat-value" id="totalBalance">0 FBU</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-users"></i></div>
+                    <div class="stat-content">
+                        <h3>Membres Actifs</h3>
+                        <p class="stat-value" id="activeMembers">0</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-chart-line"></i></div>
+                    <div class="stat-content">
+                        <h3>Contributions Mensuelles</h3>
+                        <p class="stat-value" id="monthlyContributions">0 FBU</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-circle"></i></div>
+                    <div class="stat-content">
+                        <h3>Mes Cercles</h3>
+                        <p class="stat-value" id="myCircles">0</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Graphiques -->
+            <div class="charts-grid">
+                <div class="chart-card">
+                    <h3>Évolution des Contributions</h3>
+                    <canvas id="contributionsChart"></canvas>
+                </div>
+                <div class="chart-card">
+                    <h3>Répartition par Cercle</h3>
+                    <canvas id="circlesChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Notifications -->
+            <div class="notifications-section">
+                <h3>Notifications</h3>
+                <div id="notificationsList" class="notifications-list"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== CERCLES PAGE ==================== -->
+    <div id="cerclesPage" class="page">
+        <div class="container">
+            <div class="page-header">
+                <h1>Mes Cercles d'Épargne</h1>
+                <button class="btn btn-primary" id="btnCreateCircle">
+                    <i class="fas fa-plus"></i> Créer un cercle
+                </button>
+            </div>
+
+            <!-- Liste des cercles -->
+            <div id="circlesList" class="circles-grid"></div>
+        </div>
+    </div>
+
+    <!-- Modal Création/Modification Cercle -->
+    <div id="circleModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="circleModalTitle">Créer un cercle</h2>
+                <button class="modal-close" id="closeCircleModal">&times;</button>
+            </div>
+            <form id="circleForm">
+                <div class="form-group">
+                    <label for="circleName">Nom du cercle</label>
+                    <input type="text" id="circleName" required>
+                </div>
+                <div class="form-group">
+                    <label for="circleType">Type de cercle</label>
+                    <select id="circleType" required>
+                        <option value="tontine">Tontine</option>
+                        <option value="vsla">VSLA</option>
+                        <option value="groupe-solidaire">Groupe Solidaire</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="circleProvince">Province</label>
+                        <select id="circleProvince" required>
+                            <option value="bujumbura-mairie">Buhumuza</option>
+                            <option value="bujumbura">Bujumbura</option>
+                            <option value="gitega">Gitega</option>
+                            <option value="muramvya">Butanyerera</option>
+                            <option value="bururi">Burunga</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="circleCommune">Commune</label>
+                        <input type="text" id="circleCommune" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="circleAmount">Montant de contribution (FBU)</label>
+                        <input type="number" id="circleAmount" min="0" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="circleFrequency">Fréquence</label>
+                        <select id="circleFrequency" required>
+                            <option value="hebdomadaire">Hebdomadaire</option>
+                            <option value="mensuelle">Mensuelle</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="circleDuration">Durée du cycle (mois)</label>
+                    <input type="number" id="circleDuration" min="1" max="24" required>
+                </div>
+                <div class="form-group">
+                    <label for="circleMaxMembers">Nombre maximum de membres (max 20)</label>
+                    <input type="number" id="circleMaxMembers" min="2" max="20" value="20" required>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-secondary" id="cancelCircleForm">Annuler</button>
+                    <button type="submit" class="btn btn-primary">Enregistrer</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ==================== CIRCLE DETAILS PAGE ==================== -->
+    <div id="circleDetailsPage" class="page">
+        <div class="container">
+            <div class="page-header">
+                <button class="btn btn-secondary" id="backToCircles">
+                    <i class="fas fa-arrow-left"></i> Retour
+                </button>
+                <h1 id="circleDetailsTitle">Détails du cercle</h1>
+            </div>
+
+            <div class="circle-details">
+                <div class="circle-info-card">
+                    <h3>Informations du cercle</h3>
+                    <div id="circleInfoContent"></div>
+                    <div class="circle-actions">
+                        <button class="btn btn-primary" id="btnAddMember">
+                            <i class="fas fa-user-plus"></i> Ajouter un membre
+                        </button>
+                        <button class="btn btn-secondary" id="btnEditCircle">
+                            <i class="fas fa-edit"></i> Modifier
+                        </button>
+                    </div>
+                </div>
+
+                <div class="members-section">
+                    <h3>Membres (<span id="membersCount">0</span>)</h3>
+                    <div id="membersList" class="members-grid"></div>
+                </div>
+
+                <div class="contributions-section">
+                    <h3>Contributions récentes</h3>
+                    <div id="recentContributions" class="contributions-list"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Membre -->
+    <div id="memberModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="memberModalTitle">Ajouter un membre</h2>
+                <button class="modal-close" id="closeMemberModal">&times;</button>
+            </div>
+            <form id="memberForm">
+                <div class="form-group">
+                    <label for="memberFirstName">Prénom</label>
+                    <input type="text" id="memberFirstName" required>
+                </div>
+                <div class="form-group">
+                    <label for="memberLastName">Nom</label>
+                    <input type="text" id="memberLastName" required>
+                </div>
+                <div class="form-group">
+                    <label for="memberPhone">Numéro de téléphone</label>
+                    <input type="tel" id="memberPhone" placeholder="+257 XX XX XX XX" required>
+                </div>
+                <div class="form-group">
+                    <label for="memberRole">Rôle dans le cercle</label>
+                    <select id="memberRole" required>
+                        <option value="member">Membre</option>
+                        <option value="treasurer">Trésorier</option>
+                        <option value="admin">Administrateur</option>
+                    </select>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-secondary" id="cancelMemberForm">Annuler</button>
+                    <button type="submit" class="btn btn-primary">Enregistrer</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ==================== TRANSACTIONS PAGE ==================== -->
+    <div id="transactionsPage" class="page">
+        <div class="container">
+            <div class="page-header">
+                <h1>Transactions</h1>
+                <button class="btn btn-primary" id="btnAddTransaction">
+                    <i class="fas fa-plus"></i> Nouvelle transaction
+                </button>
+            </div>
+
+            <!-- Filtres -->
+            <div class="filters-section">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="filterCircle">Cercle</label>
+                        <select id="filterCircle">
+                            <option value="">Tous les cercles</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="filterType">Type</label>
+                        <select id="filterType">
+                            <option value="">Tous les types</option>
+                            <option value="epargne">Épargne</option>
+                            <option value="penalite">Pénalité</option>
+                            <option value="pret">Prêt</option>
+                            <option value="remboursement">Remboursement</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="filterDateFrom">Date début</label>
+                        <input type="date" id="filterDateFrom">
+                    </div>
+                    <div class="form-group">
+                        <label for="filterDateTo">Date fin</label>
+                        <input type="date" id="filterDateTo">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Liste des transactions -->
+            <div id="transactionsList" class="transactions-list"></div>
+        </div>
+    </div>
+
+    <!-- Modal Transaction -->
+    <div id="transactionModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="transactionModalTitle">Nouvelle transaction</h2>
+                <button class="modal-close" id="closeTransactionModal">&times;</button>
+            </div>
+            <form id="transactionForm">
+                <div class="form-group">
+                    <label for="transactionCircle">Cercle</label>
+                    <select id="transactionCircle" required></select>
+                </div>
+                <div class="form-group">
+                    <label for="transactionMember">Membre</label>
+                    <select id="transactionMember" required></select>
+                </div>
+                <div class="form-group">
+                    <label for="transactionType">Type de transaction</label>
+                    <select id="transactionType" required>
+                        <option value="epargne">Épargne</option>
+                        <option value="penalite">Pénalité</option>
+                        <option value="pret">Prêt</option>
+                        <option value="remboursement">Remboursement</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="transactionAmount">Montant (FBU)</label>
+                    <input type="number" id="transactionAmount" min="0" step="100" required>
+                </div>
+                <div class="form-group">
+                    <label for="transactionDate">Date</label>
+                    <input type="date" id="transactionDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="transactionPaymentMethod">Moyen de paiement</label>
+                    <select id="transactionPaymentMethod" required>
+                        <option value="lumicash">Lumicash</option>
+                        <option value="ecocash">EcoCash</option>
+                        <option value="especes">Espèces</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="transactionNotes">Notes (optionnel)</label>
+                    <textarea id="transactionNotes" rows="3"></textarea>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-secondary" id="cancelTransactionForm">Annuler</button>
+                    <button type="submit" class="btn btn-primary">Enregistrer</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ==================== LOANS PAGE ==================== -->
+    <div id="pretsPage" class="page">
+        <div class="container">
+            <div class="page-header">
+                <h1>Gestion des Prêts</h1>
+                <button class="btn btn-primary" id="btnRequestLoan">
+                    <i class="fas fa-hand-holding-usd"></i> Demander un prêt
+                </button>
+            </div>
+
+            <div class="loans-section">
+                <div class="loans-tabs">
+                    <button class="tab-btn active" data-tab="pending">En attente</button>
+                    <button class="tab-btn" data-tab="active">Actifs</button>
+                    <button class="tab-btn" data-tab="completed">Terminés</button>
+                </div>
+
+                <div id="loansList" class="loans-list"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Prêt -->
+    <div id="loanModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="loanModalTitle">Demande de prêt</h2>
+                <button class="modal-close" id="closeLoanModal">&times;</button>
+            </div>
+            <form id="loanForm">
+                <div class="form-group">
+                    <label for="loanCircle">Cercle</label>
+                    <select id="loanCircle" required></select>
+                </div>
+                <div class="form-group">
+                    <label for="loanAmount">Montant demandé (FBU)</label>
+                    <input type="number" id="loanAmount" min="0" step="1000" required>
+                </div>
+                <div class="form-group">
+                    <label for="loanPurpose">Motif du prêt</label>
+                    <textarea id="loanPurpose" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="loanDuration">Durée de remboursement (mois)</label>
+                    <input type="number" id="loanDuration" min="1" max="12" required>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-secondary" id="cancelLoanForm">Annuler</button>
+                    <button type="submit" class="btn btn-primary">Soumettre</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ==================== REPORTS PAGE ==================== -->
+    <div id="rapportsPage" class="page">
+        <div class="container">
+            <div class="page-header">
+                <h1>Rapports</h1>
+                <div class="report-actions">
+                    <button class="btn btn-secondary" id="btnExportCSV">
+                        <i class="fas fa-file-csv"></i> Exporter CSV
+                    </button>
+                    <button class="btn btn-secondary" id="btnExportPDF">
+                        <i class="fas fa-file-pdf"></i> Exporter PDF
+                    </button>
+                </div>
+            </div>
+
+            <div class="reports-section">
+                <div class="report-filters">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="reportCircle">Cercle</label>
+                            <select id="reportCircle">
+                                <option value="">Tous les cercles</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="reportMember">Membre</label>
+                            <select id="reportMember">
+                                <option value="">Tous les membres</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="reportPeriod">Période</label>
+                            <select id="reportPeriod">
+                                <option value="week">Cette semaine</option>
+                                <option value="month">Ce mois</option>
+                                <option value="quarter">Ce trimestre</option>
+                                <option value="year">Cette année</option>
+                                <option value="custom">Personnalisé</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="reportsContent" class="reports-content"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== CONTACT PAGE ==================== -->
+    <div id="contactPage" class="page">
+        <div class="container">
+            <div class="page-header">
+                <h1>Contact & Support</h1>
+            </div>
+
+            <div class="contact-section">
+                <div class="contact-info">
+                    <h3>Informations de contact</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <strong>Email</strong>
+                            <p>support@twungurane.bi</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <div>
+                            <strong>WhatsApp Business</strong>
+                            <p>+257 79 000 000</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong>Adresse</strong>
+                            <p>Bujumbura, Burundi</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-container">
+                    <h3>Envoyez-nous un message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="contactName">Nom</label>
+                            <input type="text" id="contactName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactPhone">Téléphone</label>
+                            <input type="tel" id="contactPhone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactEmail">Email</label>
+                            <input type="email" id="contactEmail" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactMessage">Message</label>
+                            <textarea id="contactMessage" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Envoyer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== APP FOOTER ==================== -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <i class="fas fa-piggy-bank"></i>
+                        <h3>TWUNGURANE</h3>
+                    </div>
+                    <p>Application de gestion des groupes d'épargne communautaire. Ensemble, épargnons mieux !</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" class="footer-link" data-page="dashboard">Tableau de bord</a></li>
+                        <li><a href="#" class="footer-link" data-page="cercles">Mes Cercles</a></li>
+                        <li><a href="#" class="footer-link" data-page="transactions">Transactions</a></li>
+                        <li><a href="#" class="footer-link" data-page="prets">Prêts</a></li>
+                        <li><a href="#" class="footer-link" data-page="rapports">Rapports</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" class="footer-link" data-page="contact">Contact</a></li>
+                        <li><a href="#">Centre d'aide</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Guide d'utilisation</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>support@twungurane.bi</span>
+                        </li>
+                        <li>
+                            <i class="fab fa-whatsapp"></i>
+                            <span>+257 67227092</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Bujumbura, Burundi</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 TWUNGURANE. Tous droits réservés.</p>
+                <div class="footer-legal">
+                    <a href="#">Mentions légales</a>
+                    <a href="#">Politique de confidentialité</a>
+                    <a href="#">Conditions d'utilisation</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

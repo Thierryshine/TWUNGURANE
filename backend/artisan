@@ -1,0 +1,28 @@
+#!/usr/bin/env php
+<?php
+
+/**
+ * TWUNGURANE - Artisan Console
+ * 
+ * Point d'entrée pour les commandes Artisan Laravel
+ */
+
+define('LARAVEL_START', microtime(true));
+
+// Autoloader Composer
+require __DIR__.'/vendor/autoload.php';
+
+// Bootstrap de l'application
+$app = require_once __DIR__.'/bootstrap/app.php';
+
+// Kernel Console
+$kernel = $app->make(Illuminate\Contracts\Console\Kernel::class);
+
+$status = $kernel->handle(
+    $input = new Symfony\Component\Console\Input\ArgvInput,
+    new Symfony\Component\Console\Output\ConsoleOutput
+);
+
+$kernel->terminate($input, $status);
+
+exit($status);

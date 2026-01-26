@@ -1,0 +1,44 @@
+# =============================================================================
+# TWUNGURANE - Dépendances Python
+# Microservice d'analyse financière
+# =============================================================================
+
+# Framework Web
+fastapi==0.109.0
+uvicorn[standard]==0.27.0
+python-multipart==0.0.6
+
+# Base de données
+sqlalchemy==2.0.25
+pymysql==1.1.0
+cryptography==42.0.0
+
+# Validation et sérialisation
+pydantic==2.5.3
+pydantic-settings==2.1.0
+email-validator==2.1.0
+
+# Calculs financiers
+numpy==1.26.3
+pandas==2.1.4
+scipy==1.12.0
+
+# HTTP Client (communication avec Laravel)
+httpx==0.26.0
+aiohttp==3.9.1
+
+# Sécurité
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+
+# Utilitaires
+python-dotenv==1.0.0
+python-dateutil==2.8.2
+
+# Logging
+loguru==0.7.2
+
+# Tests
+pytest==7.4.4
+pytest-asyncio==0.23.3
+httpx==0.26.0
