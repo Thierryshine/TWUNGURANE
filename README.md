@@ -35,7 +35,6 @@ TWUNGURANE est une application web moderne qui permet de digitaliser la gestion 
 - Simulation des moyens de paiement :
   - Lumicash
   - EcoCash
-  - M-Pesa
   - Espèces
 - Historique avec filtres avancés
 - Calculs automatiques (totaux par membre et par cercle)
